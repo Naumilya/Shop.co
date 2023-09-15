@@ -29,7 +29,7 @@ npm install
 
 To compile and hot-reload your project during development, run the following command:
 
-npm run dev
+npm run dev (localhost:5173)
 
 ### Type-Check, Compile, and Minify for Production
 
