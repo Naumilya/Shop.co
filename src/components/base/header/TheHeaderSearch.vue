@@ -15,16 +15,27 @@
 @import '@/scss/variables.scss';
 .header-search {
   max-width: 577px;
-
+  padding: 10px;
   width: 100%;
+
   &__input {
-    border-radius: 62px;
-    background: $background-color;
-    padding: 12px 16px;
     width: 100%;
     border: none;
     outline: none;
     font-family: $default-font;
+
+    border-radius: 62px;
+    padding: 12px 12px 12px 52px;
+
+    background-color: $background-color;
+
+    background-image: url('@/assets/icons/search-icon.svg');
+    background-repeat: no-repeat;
+    background-position: 16px;
+
+    &::placeholder {
+      color: rgba($black, 0.4);
+    }
   }
 }
 </style>

@@ -18,10 +18,13 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/variables.scss';
 .header {
   padding: 24px 0;
   position: fixed;
+  top: 0;
   width: 100%;
+  background: $white;
 
   &__inner {
     display: flex;

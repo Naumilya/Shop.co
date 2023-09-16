@@ -10,5 +10,6 @@
 
 .logo {
   @include title-text(32px);
+  margin-top: -7px;
 }
 </style>
