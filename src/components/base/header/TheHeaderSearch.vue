@@ -44,4 +44,10 @@
     max-width: 377px;
   }
 }
+
+@media (max-width: $vp-medium) {
+  .header-search {
+    max-width: none;
+  }
+}
 </style>

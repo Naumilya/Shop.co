@@ -1,15 +1,15 @@
 <template>
   <div class="header-action">
-    <router-link class="header-action__link search" to="/Search"><iconSearch /> </router-link>
+    <TheHeaderMobileSearch />
     <router-link class="header-action__link" to="/Cart"><icnoCart /></router-link>
     <router-link class="header-action__link" to="/Account"><iconAccount /></router-link>
   </div>
 </template>
 
 <script setup lang="ts">
+import TheHeaderMobileSearch from '@/components/base/header/TheHeaderMobileSearch.vue'
 import iconAccount from '@/components/icons/iconAccount.vue'
 import icnoCart from '@/components/icons/iconCart.vue'
-import iconSearch from '@/components/icons/iconSearch.vue'
 </script>
 
 <style scoped lang="scss">
