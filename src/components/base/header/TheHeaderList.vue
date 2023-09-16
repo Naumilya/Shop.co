@@ -49,4 +49,20 @@ const ListMenu: itemListMenu[] = [
     }
   }
 }
+
+@media (max-width: $vp-small) {
+  .header-list {
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    &__item {
+      background-color: $background-color;
+      border: 1px solid $divider;
+      &-link {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+}
 </style>

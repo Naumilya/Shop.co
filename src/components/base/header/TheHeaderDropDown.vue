@@ -41,12 +41,14 @@ const ListMenu: itemListMenu[] = [
 @import '@/scss/variables.scss';
 
 .dropdown {
+  width: 100%;
   position: relative;
   display: inline-block;
 
   .dropbtn {
     background-color: transparent;
     font-family: $default-font;
+
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -56,7 +58,6 @@ const ListMenu: itemListMenu[] = [
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
@@ -75,6 +76,39 @@ const ListMenu: itemListMenu[] = [
   &:hover {
     .dropdown__content {
       display: block;
+    }
+  }
+}
+
+@media (max-width: $vp-small) {
+  .dropdown {
+    .dropbtn {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    &__content {
+      position: static;
+
+      box-shadow: none;
+      font-size: 16px;
+
+      a {
+        background-color: rgba(#fff, 1);
+        border: 1px solid $divider;
+
+        display: flex;
+        justify-content: center;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+
+    &:hover {
+      .dropdown__content {
+        column-gap: 24px;
+      }
     }
   }
 }

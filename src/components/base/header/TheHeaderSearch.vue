@@ -38,4 +38,10 @@
     }
   }
 }
+
+@media (max-width: $vp-extra-large) {
+  .header-search {
+    max-width: 377px;
+  }
+}
 </style>

@@ -1,6 +1,7 @@
 // *! colors
 $black: #000000;
 $white: #fff;
+$divider: rgba($black, 0.1);
 $background-color: #f0f0f0;
 
 // *! fonts
@@ -8,3 +9,8 @@ $title-font: 'Integral CF', sans-serif;
 $default-font: 'Satoshi', sans-serif;
 
 // *! breakepoints
+$vp-x-small: 576px;
+$vp-small: 768px;
+$vp-medium: 992px;
+$vp-large: 1200px;
+$vp-extra-large: 1400px;
