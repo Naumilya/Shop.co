@@ -1,0 +1,14 @@
+@import '@/vendor/fonts.scss';
+
+@mixin text-headline($font-size) {
+  font-family: 'Integral CF', sans-serif;
+  font-size: $font-size;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #000;
+}
+
+@mixin text-headline-logo {
+  @include text-headline(32px);
+}
