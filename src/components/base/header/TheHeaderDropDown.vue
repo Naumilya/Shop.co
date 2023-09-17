@@ -1,11 +1,9 @@
 <template>
-  <div class="dropdown">
-    <button class="dropbtn" @click="isActive = !isActive">
-      <span>Shop</span> <iconDropDownArrow />
-    </button>
+  <div class="dropdown" ref="dropdownRef">
+    <button class="dropbtn" @click="toggleDropdown"><span>Shop</span> <iconDropDownArrow /></button>
     <div class="dropdown__content" v-if="isActive">
       <router-link
-        @click="isActive = !isActive"
+        @click="toggleDropdown"
         v-for="{ nameItem, pathItem } in ListMenu"
         :key="nameItem"
         :to="pathItem"
@@ -18,8 +16,9 @@
 
 <script setup lang="ts">
 import iconDropDownArrow from '@/components/icons/iconDropDownArrow.vue'
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
+const dropdownRef = ref<Element | null>(null)
 const isActive = ref(false)
 
 interface itemListMenu {
@@ -45,6 +44,26 @@ const ListMenu: itemListMenu[] = [
     pathItem: '/Gym'
   }
 ]
+
+watchEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    const dropdownElement = dropdownRef.value
+
+    if (dropdownElement && !(dropdownElement as Element).contains(event.target as Node)) {
+      isActive.value = false
+    }
+  }
+
+  window.addEventListener('click', handleClickOutside)
+
+  return () => {
+    window.removeEventListener('click', handleClickOutside)
+  }
+})
+
+const toggleDropdown = () => {
+  isActive.value = !isActive.value
+}
 </script>
 
 <style lang="scss" scoped>
