@@ -5,11 +5,10 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-@import '@/scss/mixins.scss';
-@import '@/scss/variables.scss';
+@use '@/scss/fonts.scss';
 
 .logo {
-  @include title-text(32px);
+  @include fonts.text-headline-logo;
   margin-top: -7px;
 }
 </style>

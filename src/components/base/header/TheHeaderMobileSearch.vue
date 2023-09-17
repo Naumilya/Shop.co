@@ -44,7 +44,7 @@ const isActive = ref(false)
 
 @media (max-width: $vp-medium) {
   .search {
-    display: block;
+    display: flex;
   }
 }
 </style>

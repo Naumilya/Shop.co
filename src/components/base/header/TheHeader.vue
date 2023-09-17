@@ -27,6 +27,7 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
   top: 0;
   width: 100%;
   background: $white;
+  // align-items: center;
 
   &__inner {
     display: flex;

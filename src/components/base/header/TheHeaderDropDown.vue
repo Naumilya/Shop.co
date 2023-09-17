@@ -1,8 +1,15 @@
 <template>
   <div class="dropdown">
-    <button class="dropbtn">Shop <iconDropDownArrow /></button>
-    <div class="dropdown__content">
-      <router-link v-for="{ nameItem, pathItem } in ListMenu" :key="nameItem" :to="pathItem">
+    <button class="dropbtn" @click="isActive = !isActive">
+      <span>Shop</span> <iconDropDownArrow />
+    </button>
+    <div class="dropdown__content" v-if="isActive">
+      <router-link
+        @click="isActive = !isActive"
+        v-for="{ nameItem, pathItem } in ListMenu"
+        :key="nameItem"
+        :to="pathItem"
+      >
         {{ nameItem }}
       </router-link>
     </div>
@@ -11,6 +18,9 @@
 
 <script setup lang="ts">
 import iconDropDownArrow from '@/components/icons/iconDropDownArrow.vue'
+import { ref } from 'vue'
+
+const isActive = ref(false)
 
 interface itemListMenu {
   nameItem: string
@@ -43,7 +53,9 @@ const ListMenu: itemListMenu[] = [
 .dropdown {
   width: 100%;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   .dropbtn {
     background-color: transparent;
@@ -52,11 +64,18 @@ const ListMenu: itemListMenu[] = [
     font-size: 16px;
     border: none;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    span {
+      padding-right: 4px;
+    }
   }
 
   &__content {
-    display: none;
     position: absolute;
+    top: 25px;
     background-color: #f1f1f1;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -67,15 +86,12 @@ const ListMenu: itemListMenu[] = [
       text-decoration: none;
       display: block;
 
-      &:hover {
+      &:hover,
+      &:active,
+      &:focus,
+      &:target {
         background-color: #ddd;
       }
-    }
-  }
-
-  &:hover {
-    .dropdown__content {
-      display: block;
     }
   }
 }
@@ -88,26 +104,15 @@ const ListMenu: itemListMenu[] = [
     }
     &__content {
       position: static;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
 
-      box-shadow: none;
       font-size: 16px;
 
       a {
         background-color: rgba(#fff, 1);
         border: 1px solid $divider;
-
-        display: flex;
-        justify-content: center;
-
-        &:hover {
-          background-color: #ddd;
-        }
-      }
-    }
-
-    &:hover {
-      .dropdown__content {
-        column-gap: 24px;
       }
     }
   }

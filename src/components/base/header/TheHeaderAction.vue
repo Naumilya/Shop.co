@@ -19,6 +19,11 @@ import icnoCart from '@/components/icons/iconCart.vue'
   display: flex;
   align-items: center;
   column-gap: 14px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .search {

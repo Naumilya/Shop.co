@@ -1,13 +1,14 @@
-@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import '@/vendor/fonts.scss';
 
-@font-face {
-  font-family: 'Integral CF';
-  src:
-    local('Integral CF Bold'),
-    local('Integral-CF-Bold'),
-    url('../assets/fonts/IntegralCF-Bold.woff2') format('woff2'),
-    url('../assets/fonts/IntegralCF-Bold.woff') format('woff'),
-    url('../assets/fonts/IntegralCF-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
+@mixin text-headline($font-size) {
+  font-family: 'Integral CF', sans-serif;
+  font-size: $font-size;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #000;
+}
+
+@mixin text-headline-logo {
+  @include text-headline(32px);
 }
