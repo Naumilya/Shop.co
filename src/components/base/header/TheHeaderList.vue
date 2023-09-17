@@ -36,7 +36,7 @@ const ListMenu: itemListMenu[] = [
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/variables.scss';
+@use '@/scss/fonts.scss';
 
 .header-list {
   display: flex;
@@ -45,24 +45,25 @@ const ListMenu: itemListMenu[] = [
   &__item {
     &-link {
       text-decoration: none;
-      color: $black;
+      @include fonts.text-headline-logo;
+      // color: $black;
     }
   }
 }
 
-@media (max-width: $vp-small) {
-  .header-list {
-    display: block;
-    width: 100%;
-    font-weight: 600;
-    &__item {
-      background-color: $background-color;
-      border: 1px solid $divider;
-      &-link {
-        text-decoration: none;
-        color: $black;
-      }
-    }
-  }
-}
+// @media (max-width: $vp-small) {
+//   .header-list {
+//     display: block;
+//     width: 100%;
+//     font-weight: 600;
+//     &__item {
+//       background-color: $background-color;
+//       border: 1px solid $divider;
+//       &-link {
+//         text-decoration: none;
+//         color: $black;
+//       }
+//     }
+//   }
+// }
 </style>
