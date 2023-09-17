@@ -1,17 +1,14 @@
 <template>
-  <router-link :to="path" class="button"><slot></slot></router-link>
+  <router-link :to="props.path" class="button"><slot></slot></router-link>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
-defineProps({
-  path: {
-    type: String,
-    required: true,
-    default: '/'
-  }
-})
+interface Props {
+  path: string
+}
+const props = defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>
