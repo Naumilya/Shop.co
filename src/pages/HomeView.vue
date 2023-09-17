@@ -1,5 +1,9 @@
 <template>
-  <main></main>
+  <main>
+    <TheHeroSection />
+  </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheHeroSection from '@/components/base/hero/TheHeroSection.vue'
+</script>
