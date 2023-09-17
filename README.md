@@ -1,4 +1,4 @@
-# shop-co
+# shop-co - Your Fashion Destination for Clothes Online
 
 🛍️ Hey there! This template will help you get started with developing in Vue 3 using Vite.
 
