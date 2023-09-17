@@ -20,13 +20,13 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 .header {
   padding: 24px 0;
   position: fixed;
   top: 0;
   width: 100%;
-  background: $white;
+  background: variables.$white;
   // align-items: center;
 
   &__inner {
@@ -36,13 +36,13 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
   }
 }
 
-@media (max-width: $vp-medium) {
+@media (max-width: variables.$vp-medium) {
   .header__search {
     display: none;
   }
 }
 
-@media (max-width: $vp-small) {
+@media (max-width: variables.$vp-small) {
   .header {
     &__inner {
       display: flex;

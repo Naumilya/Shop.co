@@ -12,7 +12,7 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 .header-search {
   max-width: 577px;
   padding: 10px;
@@ -22,30 +22,30 @@
     width: 100%;
     border: none;
     outline: none;
-    font-family: $default-font;
+    font-family: variables.$default-font;
 
     border-radius: 62px;
     padding: 12px 12px 12px 52px;
 
-    background-color: $background-color;
+    background-color: variables.$background-color;
 
     background-image: url('@/assets/icons/search-icon.svg');
     background-repeat: no-repeat;
     background-position: 16px;
 
     &::placeholder {
-      color: rgba($black, 0.4);
+      color: rgba(variables.$black, 0.4);
     }
   }
 }
 
-@media (max-width: $vp-extra-large) {
+@media (max-width: variables.$vp-extra-large) {
   .header-search {
     max-width: 377px;
   }
 }
 
-@media (max-width: $vp-medium) {
+@media (max-width: variables.$vp-medium) {
   .header-search {
     max-width: none;
   }

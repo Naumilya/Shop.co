@@ -48,7 +48,7 @@ const ListMenu: itemListMenu[] = [
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 
 .dropdown {
   width: 100%;
@@ -59,7 +59,7 @@ const ListMenu: itemListMenu[] = [
 
   .dropbtn {
     background-color: transparent;
-    font-family: $default-font;
+    font-family: variables.$default-font;
 
     font-size: 16px;
     border: none;
@@ -96,7 +96,7 @@ const ListMenu: itemListMenu[] = [
   }
 }
 
-@media (max-width: $vp-small) {
+@media (max-width: variables.$vp-small) {
   .dropdown {
     .dropbtn {
       font-size: 24px;
@@ -112,7 +112,7 @@ const ListMenu: itemListMenu[] = [
 
       a {
         background-color: rgba(#fff, 1);
-        border: 1px solid $divider;
+        border: 1px solid variables.$divider;
       }
     }
   }

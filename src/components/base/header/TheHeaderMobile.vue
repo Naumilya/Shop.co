@@ -23,7 +23,7 @@ const toggleBurger = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 
 .header-mobile {
   display: none;
@@ -59,7 +59,7 @@ const toggleBurger = () => {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: $black;
+    background-color: variables.$black;
   }
 }
 
@@ -67,8 +67,8 @@ const toggleBurger = () => {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: $black;
-  color: $black;
+  background-color: variables.$black;
+  color: variables.$black;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -84,7 +84,7 @@ const toggleBurger = () => {
   transform: translateY(-5px) rotate(-45deg);
 }
 
-@media (max-width: $vp-small) {
+@media (max-width: variables.$vp-small) {
   .header-mobile {
     display: block;
   }

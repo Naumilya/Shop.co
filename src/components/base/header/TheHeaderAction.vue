@@ -13,7 +13,7 @@ import icnoCart from '@/components/icons/iconCart.vue'
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 
 .header-action {
   display: flex;
@@ -30,7 +30,7 @@ import icnoCart from '@/components/icons/iconCart.vue'
   display: none;
 }
 
-@media (max-width: $vp-medium) {
+@media (max-width: variables.$vp-medium) {
   .search {
     display: block;
   }

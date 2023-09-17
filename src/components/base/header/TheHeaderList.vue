@@ -46,7 +46,7 @@ const ListMenu: itemListMenu[] = [
   &__item {
     &-link {
       text-decoration: none;
-      @include fonts.text-headline-logo;
+
       color: variables.$black;
     }
   }

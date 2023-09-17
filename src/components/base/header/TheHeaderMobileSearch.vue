@@ -19,7 +19,7 @@ const isActive = ref(false)
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/variables.scss';
+@use '@/scss/variables.scss';
 
 .mobile-search {
   position: absolute;
@@ -27,14 +27,14 @@ const isActive = ref(false)
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: $white;
+  background-color: variables.$white;
   display: flex;
 
   &__close {
     padding: 15px;
     text-align: center;
     text-decoration: none;
-    color: $black;
+    color: variables.$black;
   }
 }
 
@@ -42,7 +42,7 @@ const isActive = ref(false)
   display: none;
 }
 
-@media (max-width: $vp-medium) {
+@media (max-width: variables.$vp-medium) {
   .search {
     display: flex;
   }
