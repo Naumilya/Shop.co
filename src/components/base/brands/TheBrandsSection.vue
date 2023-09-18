@@ -4,7 +4,7 @@
       <ul class="brands__list">
         <li class="brands__list-item" v-for="brandItem in BrandsList" :key="brandItem.nameBrand">
           <img
-            class="brand__list-image"
+            class="brands__list-image"
             :src="`/src/assets/svgs/brands/${brandItem.pathImagegBrand}`"
             :alt="brandItem.nameBrand"
           />
@@ -65,14 +65,23 @@ const BrandsList = ref<Brands[]>([
     justify-content: space-between;
     gap: 20px;
 
+    &-item {
+      text-align: center;
+    }
+
     &-image {
       object-fit: cover;
-      max-width: 100%;
-      height: auto;
+      width: 100%;
     }
   }
 }
 
 @media (max-width: variables.$vp-small) {
+  .brands__list {
+    justify-content: center;
+    &-image {
+      width: 80%;
+    }
+  }
 }
 </style>
