@@ -12,3 +12,7 @@
 @mixin text-headline-logo {
   @include text-headline(32px);
 }
+
+@mixin text-headline-h2 {
+  @include text-headline(48px);
+}
