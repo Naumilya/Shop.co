@@ -61,15 +61,18 @@ const BrandsList = ref<Brands[]>([
   &__list {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
 
     &-image {
+      object-fit: cover;
       max-width: 100%;
       height: auto;
-
-      object-fit: cover;
     }
   }
+}
+
+@media (max-width: variables.$vp-small) {
 }
 </style>
