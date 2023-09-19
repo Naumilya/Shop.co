@@ -1,6 +1,6 @@
 <template>
   <main>
-    <ProductCards>
+    <ProductCards :categories="['New Arrivals']">
       <template v-slot:title>New Arrivals</template>
     </ProductCards>
   </main>

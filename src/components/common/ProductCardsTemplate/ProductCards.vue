@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
-import { onMounted, reactive } from 'vue'
+import { defineProps, onMounted, reactive } from 'vue'
 
 interface Product {
   id: number
@@ -33,9 +33,21 @@ const data = reactive({
   cardProductList: [] as Product[]
 })
 
+const props = defineProps({
+  categories: {
+    type: Array as () => string[],
+    required: true
+  }
+})
+
 onMounted(async () => {
   const products = await getProducts()
-  data.cardProductList = products
+
+  const filteredProducts: Product[] = products.filter((product: Product) => {
+    return product.filterProduct.some((category: string) => props.categories.includes(category))
+  })
+
+  data.cardProductList = filteredProducts
 })
 </script>
 
@@ -54,5 +66,6 @@ onMounted(async () => {
 .containerCards {
   display: flex;
   gap: 20px;
+  margin-top: 55px;
 }
 </style>

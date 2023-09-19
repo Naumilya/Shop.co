@@ -11,7 +11,7 @@
   },
   {
     "id": 1,
-    "filterProduct": ["New Arrivals"],
+    "filterProduct": ["Top selling", "New Arrivals"],
     "categoryProduct": "Formal",
     "namPeroduct": "SKINNY FIT JEANS",
     "pathImageProduct": "/src/assets/images/products/product2.jpg",
