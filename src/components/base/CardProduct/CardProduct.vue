@@ -3,12 +3,12 @@
     :to="`/${props.product.categoryProduct}/product:${props.product.id}`"
     :class="$style.card"
   >
-    <img :src="'/src/assets/images/products/product1.jpg'" :alt="'text'" :class="$style.image" />
+    <img :src="props.product.pathImageProduct" :alt="'text'" :class="$style.image" />
     <h4 :class="$style.title">{{ props.product.namPeroduct }}</h4>
     <div :class="$style.rating">
       <span :class="$style.ratingStars">
         <iconStar v-for="star in Math.floor(props.product.ratingProduct)" :key="star" />
-        <iconHalfStar v-if="true" />
+        <iconHalfStar v-if="!Number.isInteger(props.product.ratingProduct)" />
       </span>
       <span :class="$style.ratingNumber">{{ props.product.ratingProduct }}/5</span>
     </div>
@@ -28,7 +28,8 @@ import iconStar from '@/components/icons/iconStar.vue'
 
 interface Product {
   id: number
-  categoryProduct: string[]
+  filterProduct: string[]
+  categoryProduct: string
   namPeroduct: string
   pathImageProduct: string
   ratingProduct: number

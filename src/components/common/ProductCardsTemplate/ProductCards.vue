@@ -20,7 +20,8 @@ import { onMounted, reactive } from 'vue'
 
 interface Product {
   id: number
-  categoryProduct: string[]
+  filterProduct: string[]
+  categoryProduct: string
   namPeroduct: string
   pathImageProduct: string
   ratingProduct: number
