@@ -28,3 +28,7 @@
 @mixin text-headline-card {
   @include text-body(20px);
 }
+
+@mixin text-body-prices {
+  @include text-body(24px);
+}

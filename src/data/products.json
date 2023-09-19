@@ -1,0 +1,10 @@
+[
+  {
+    "categoryProduct": ["New Arrivals"],
+    "namPeroduct": "T-SHIRT WITH TAPE DETAILS",
+    "pathImageProduct": "/src/assets/images/products/product1.jpg",
+    "ratingProduct": 3.5,
+    "pricesProduct": 120,
+    "pricesDiscount": 20
+  }
+]

@@ -11,7 +11,10 @@
 </template>
 
 <script setup lang="ts">
+// import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
+
+// getProducts()
 </script>
 
 <style module lang="scss">
