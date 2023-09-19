@@ -52,5 +52,7 @@ onMounted(async () => {
 }
 
 .containerCards {
+  display: flex;
+  gap: 20px;
 }
 </style>

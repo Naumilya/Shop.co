@@ -10,7 +10,9 @@
         <iconStar v-for="star in Math.floor(props.product.ratingProduct)" :key="star" />
         <iconHalfStar v-if="!Number.isInteger(props.product.ratingProduct)" />
       </span>
-      <span :class="$style.ratingNumber">{{ props.product.ratingProduct }}/5</span>
+      <span :class="$style.ratingNumber"
+        >{{ props.product.ratingProduct }} <span :class="$style.ratingNumberSpan">/5</span>
+      </span>
     </div>
     <div :class="$style.prices">
       <span :class="$style.pricesFinal">${{ props.product.priceProduct }}</span>
@@ -47,6 +49,7 @@ const props = defineProps({
 
 <style module lang="scss">
 @use '@/scss/fonts.scss';
+@use '@/scss/variables.scss';
 .card {
   max-width: 295px;
   border-radius: 20px;
@@ -66,6 +69,10 @@ const props = defineProps({
     }
 
     .ratingNumber {
+      color: variables.$black;
+      .ratingNumberSpan {
+        color: rgba(variables.$black, 0.6);
+      }
     }
   }
   .prices {

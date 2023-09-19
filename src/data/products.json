@@ -8,5 +8,15 @@
     "ratingProduct": 3.5,
     "priceProduct": 120,
     "pricesDiscount": 20
+  },
+  {
+    "id": 1,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "SKINNY FIT JEANS",
+    "pathImageProduct": "/src/assets/images/products/product2.jpg",
+    "ratingProduct": 5,
+    "priceProduct": 120,
+    "pricesDiscount": 20
   }
 ]
