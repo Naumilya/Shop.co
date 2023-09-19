@@ -16,7 +16,54 @@
     "namPeroduct": "SKINNY FIT JEANS",
     "pathImageProduct": "/src/assets/images/products/product2.jpg",
     "ratingProduct": 5,
-    "priceProduct": 120,
+    "priceProduct": 190,
     "pricesDiscount": 20
+  },
+  {
+    "id": 2,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "CHECKERED SHIRT",
+    "pathImageProduct": "/src/assets/images/products/product3.jpg",
+    "ratingProduct": 3,
+    "priceProduct": 180
+  },
+  {
+    "id": 3,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "SLEEVE STRIPED T-SHIRT",
+    "pathImageProduct": "/src/assets/images/products/product4.jpg",
+    "ratingProduct": 4.5,
+    "priceProduct": 160,
+    "pricesDiscount": 30
+  },
+  {
+    "id": 4,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "VERTICAL STRIPED SHIRT",
+    "pathImageProduct": "/src/assets/images/products/product5.jpg",
+    "ratingProduct": 3,
+    "priceProduct": 232,
+    "pricesDiscount": 20
+  },
+  {
+    "id": 5,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "COURAGE GRAPHIC T-SHIRT",
+    "pathImageProduct": "/src/assets/images/products/product6.jpg",
+    "ratingProduct": 3,
+    "priceProduct": 145
+  },
+  {
+    "id": 7,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Formal",
+    "namPeroduct": "SKINNY FIT JEANS",
+    "pathImageProduct": "/src/assets/images/products/product7.jpg",
+    "ratingProduct": 3,
+    "priceProduct": 80
   }
 ]

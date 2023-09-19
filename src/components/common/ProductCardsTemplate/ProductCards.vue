@@ -53,9 +53,12 @@ onMounted(async () => {
 
 <style module lang="scss">
 @use '@/scss/fonts.scss';
+@use '@/scss/variables.scss';
 
 .productСards {
   margin-top: 72px;
+  padding-bottom: 55px;
+  border-bottom: 1px solid rgba(variables.$black, 0.5);
 }
 
 .productСardsTitle {
@@ -67,5 +70,19 @@ onMounted(async () => {
   display: flex;
   gap: 20px;
   margin-top: 55px;
+  overflow-x: scroll;
+  padding-bottom: 50px;
+
+  &::-webkit-scrollbar {
+    background-color: variables.$divider;
+    height: 4px;
+
+    border-radius: 36px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: variables.$black;
+    border-radius: 10%;
+  }
 }
 </style>

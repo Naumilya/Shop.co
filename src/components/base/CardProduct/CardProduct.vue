@@ -3,20 +3,28 @@
     :to="`/${props.product.categoryProduct}/product:${props.product.id}`"
     :class="$style.card"
   >
-    <img :src="props.product.pathImageProduct" :alt="'text'" :class="$style.image" />
+    <img
+      :src="props.product.pathImageProduct"
+      :alt="props.product.namPeroduct"
+      :class="$style.image"
+    />
     <h4 :class="$style.title">{{ props.product.namPeroduct }}</h4>
     <div :class="$style.rating">
       <span :class="$style.ratingStars">
         <iconStar v-for="star in Math.floor(props.product.ratingProduct)" :key="star" />
-        <iconHalfStar v-if="!Number.isInteger(props.product.ratingProduct)" />
+        <iconHalfStar
+          v-if="!Number.isInteger(props.product.ratingProduct) && props.product.ratingProduct !== 5"
+        />
       </span>
       <span :class="$style.ratingNumber"
         >{{ props.product.ratingProduct }} <span :class="$style.ratingNumberSpan">/5</span>
       </span>
     </div>
     <div :class="$style.prices">
-      <span :class="$style.pricesFinal">${{ props.product.priceProduct }}</span>
-      <s :class="$style.pricesFull">${{ props.product.priceProduct }}</s>
+      <span :class="$style.pricesFinal">${{ calculateFinalPrice }}</span>
+      <s :class="$style.pricesFull" v-if="props.product.pricesDiscount"
+        >${{ props.product.priceProduct }}</s
+      >
       <span :class="$style.pricesDiscount" v-if="props.product.pricesDiscount">
         - {{ props.product.pricesDiscount }}%
       </span>
@@ -27,6 +35,7 @@
 <script setup lang="ts">
 import iconHalfStar from '@/components/icons/iconHalfStar.vue'
 import iconStar from '@/components/icons/iconStar.vue'
+import { computed } from 'vue'
 
 interface Product {
   id: number
@@ -43,6 +52,16 @@ const props = defineProps({
   product: {
     type: Object as () => Product,
     required: true
+  }
+})
+
+const calculateFinalPrice = computed(() => {
+  if (props.product.pricesDiscount) {
+    return (
+      props.product.priceProduct - (props.product.priceProduct * props.product.pricesDiscount) / 100
+    )
+  } else {
+    return props.product.priceProduct
   }
 })
 </script>
