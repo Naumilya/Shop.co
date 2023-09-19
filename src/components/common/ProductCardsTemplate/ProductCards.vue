@@ -3,18 +3,39 @@
     <div class="container">
       <h2 :class="$style.productСardsTitle"><slot name="title" /></h2>
       <div :class="$style.containerCards">
-        <CardProduct />
-        <!-- v-for='cardProduct in cardProductList' :key='cardProduct.id' -->
+        <CardProduct
+          v-for="cardProduct in data.cardProductList"
+          :key="cardProduct.id"
+          :product="cardProduct"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// import { getProducts } from '@/api/getProducts'
+import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
+import { onMounted, reactive } from 'vue'
 
-// getProducts()
+interface Product {
+  id: number
+  categoryProduct: string[]
+  namPeroduct: string
+  pathImageProduct: string
+  ratingProduct: number
+  priceProduct: number
+  pricesDiscount?: number
+}
+
+const data = reactive({
+  cardProductList: [] as Product[]
+})
+
+onMounted(async () => {
+  const products = await getProducts()
+  data.cardProductList = products
+})
 </script>
 
 <style module lang="scss">

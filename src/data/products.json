@@ -1,10 +1,12 @@
 [
   {
-    "categoryProduct": ["New Arrivals"],
+    "id": 0,
+    "filterProduct": ["New Arrivals"],
+    "categoryProduct": "Casual",
     "namPeroduct": "T-SHIRT WITH TAPE DETAILS",
     "pathImageProduct": "/src/assets/images/products/product1.jpg",
     "ratingProduct": 3.5,
-    "pricesProduct": 120,
+    "priceProduct": 120,
     "pricesDiscount": 20
   }
 ]

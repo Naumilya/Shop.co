@@ -1,18 +1,23 @@
 <template>
-  <router-link to="/" :class="$style.card">
+  <router-link
+    :to="`/${props.product.categoryProduct}/product:${props.product.id}`"
+    :class="$style.card"
+  >
     <img :src="'/src/assets/images/products/product1.jpg'" :alt="'text'" :class="$style.image" />
-    <h4 :class="$style.title">T-SHIRT WITH TAPE DETAILS</h4>
+    <h4 :class="$style.title">{{ props.product.namPeroduct }}</h4>
     <div :class="$style.rating">
       <span :class="$style.ratingStars">
-        <iconStar />
+        <iconStar v-for="star in Math.floor(props.product.ratingProduct)" :key="star" />
         <iconHalfStar v-if="true" />
       </span>
-      <span :class="$style.ratingNumber">4.5/5</span>
+      <span :class="$style.ratingNumber">{{ props.product.ratingProduct }}/5</span>
     </div>
     <div :class="$style.prices">
-      <span :class="$style.pricesFinal">$120</span>
-      <s :class="$style.pricesFull">$120</s>
-      <span :class="$style.pricesDiscount">-20%</span>
+      <span :class="$style.pricesFinal">${{ props.product.priceProduct }}</span>
+      <s :class="$style.pricesFull">${{ props.product.priceProduct }}</s>
+      <span :class="$style.pricesDiscount" v-if="props.product.pricesDiscount">
+        - {{ props.product.pricesDiscount }}%
+      </span>
     </div>
   </router-link>
 </template>
@@ -22,13 +27,21 @@ import iconHalfStar from '@/components/icons/iconHalfStar.vue'
 import iconStar from '@/components/icons/iconStar.vue'
 
 interface Product {
+  id: number
   categoryProduct: string[]
   namPeroduct: string
   pathImageProduct: string
   ratingProduct: number
-  pricesProduct: number
+  priceProduct: number
   pricesDiscount?: number
 }
+
+const props = defineProps({
+  product: {
+    type: Object as () => Product,
+    required: true
+  }
+})
 </script>
 
 <style module lang="scss">
