@@ -1,6 +1,8 @@
 <template>
   <main>
-    <ProductCards>NEW ARRIVALS</ProductCards>
+    <ProductCards>
+      <template v-slot:title>New Arrivals</template>
+    </ProductCards>
   </main>
 </template>
 

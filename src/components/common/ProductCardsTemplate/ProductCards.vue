@@ -1,7 +1,12 @@
 <template>
-  <section class="product-cards">
-    <h2 class="product-cards__title"><slot></slot></h2>
-    <CardProduct />
+  <section :class="$style.productСards">
+    <div class="container">
+      <h2 :class="$style.productСardsTitle"><slot name="title" /></h2>
+      <div :class="$style.containerCards">
+        <CardProduct />
+        <!-- v-for='cardProduct in cardProductList' :key='cardProduct.id' -->
+      </div>
+    </div>
   </section>
 </template>
 
@@ -9,14 +14,18 @@
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use '@/scss/fonts.scss';
 
-.product-cards {
+.productСards {
   margin-top: 72px;
-  &__title {
-    text-align: center;
-    @include fonts.text-headline-h2;
-  }
+}
+
+.productСardsTitle {
+  text-align: center;
+  @include fonts.text-headline-h2;
+}
+
+.containerCards {
 }
 </style>

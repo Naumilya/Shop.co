@@ -9,10 +9,21 @@
   color: #000;
 }
 
+@mixin text-body($font-size) {
+  font-family: 'Satoshi', sans-serif;
+  font-size: $font-size;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000;
+}
+
 @mixin text-headline-logo {
   @include text-headline(32px);
 }
 
 @mixin text-headline-h2 {
   @include text-headline(48px);
+}
+@mixin text-headline-card {
+  @include text-body(20px);
 }
