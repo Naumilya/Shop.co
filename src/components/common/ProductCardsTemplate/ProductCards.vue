@@ -16,18 +16,8 @@
 <script setup lang="ts">
 import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
+import type { Product } from '@/types/IProducts'
 import { defineProps, onMounted, reactive } from 'vue'
-
-interface Product {
-  id: number
-  filterProduct: string[]
-  categoryProduct: string
-  namPeroduct: string
-  pathImageProduct: string
-  ratingProduct: number
-  priceProduct: number
-  pricesDiscount?: number
-}
 
 const data = reactive({
   cardProductList: [] as Product[]

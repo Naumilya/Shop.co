@@ -11,10 +11,8 @@
     <h4 :class="$style.title">{{ props.product.namPeroduct }}</h4>
     <div :class="$style.rating">
       <span :class="$style.ratingStars">
-        <iconStar v-for="star in Math.floor(props.product.ratingProduct)" :key="star" />
-        <iconHalfStar
-          v-if="!Number.isInteger(props.product.ratingProduct) && props.product.ratingProduct !== 5"
-        />
+        <iconStar v-for="star in floorRatingArray" :key="star" />
+        <iconHalfStar v-if="calculateRatingStars" />
       </span>
       <span :class="$style.ratingNumber"
         >{{ props.product.ratingProduct }} <span :class="$style.ratingNumberSpan">/5</span>
@@ -35,18 +33,8 @@
 <script setup lang="ts">
 import iconHalfStar from '@/components/icons/iconHalfStar.vue'
 import iconStar from '@/components/icons/iconStar.vue'
+import type { Product } from '@/types/IProducts'
 import { computed } from 'vue'
-
-interface Product {
-  id: number
-  filterProduct: string[]
-  categoryProduct: string
-  namPeroduct: string
-  pathImageProduct: string
-  ratingProduct: number
-  priceProduct: number
-  pricesDiscount?: number
-}
 
 const props = defineProps({
   product: {
@@ -56,13 +44,17 @@ const props = defineProps({
 })
 
 const calculateFinalPrice = computed(() => {
-  if (props.product.pricesDiscount) {
-    return (
-      props.product.priceProduct - (props.product.priceProduct * props.product.pricesDiscount) / 100
-    )
-  } else {
-    return props.product.priceProduct
-  }
+  return props.product.pricesDiscount
+    ? props.product.priceProduct - (props.product.priceProduct * props.product.pricesDiscount) / 100
+    : props.product.priceProduct
+})
+
+const calculateRatingStars = computed(() => {
+  return !Number.isInteger(props.product.ratingProduct) && props.product.ratingProduct !== 5
+})
+
+const floorRatingArray = computed(() => {
+  return Math.floor(props.product.ratingProduct)
 })
 </script>
 
@@ -102,16 +94,10 @@ const calculateFinalPrice = computed(() => {
       @include fonts.text-body-prices;
     }
     .pricesFull {
-      color: rgba(#000000, 0.4);
-      font-size: 24px;
-      font-weight: 700;
+      @include fonts.text-body-fullPrice;
     }
     .pricesDiscount {
-      font-size: 12px;
-      padding: 6px 13px;
-      color: #ff3333;
-      background-color: rgba(#ff3333, 0.1);
-      border-radius: 62px;
+      @include fonts.text-body-discount;
     }
   }
 }

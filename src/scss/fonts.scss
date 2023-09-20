@@ -9,12 +9,12 @@
   color: #000;
 }
 
-@mixin text-body($font-size) {
+@mixin text-body($font-size, $font-weight) {
   font-family: 'Satoshi', sans-serif;
   font-size: $font-size;
   text-decoration: none;
 
-  font-weight: 700;
+  font-weight: $font-weight;
   color: #000;
 }
 
@@ -26,9 +26,22 @@
   @include text-headline(48px);
 }
 @mixin text-headline-card {
-  @include text-body(20px);
+  @include text-body(20px, 700);
 }
 
 @mixin text-body-prices {
-  @include text-body(24px);
+  @include text-body(24px, 700);
+}
+
+@mixin text-body-fullPrice {
+  @include text-body(24px, 700);
+  color: rgba(#000, 0.4);
+}
+
+@mixin text-body-discount {
+  @include text-body(12px, 700);
+  color: #ff3333;
+  padding: 6px 13px;
+  background-color: rgba(#ff3333, 0.1);
+  border-radius: 62px;
 }
