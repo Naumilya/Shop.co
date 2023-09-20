@@ -4,6 +4,7 @@
       :pathImage="'background-hero.jpg'"
       :path-image-mobile="'background-mobile.jpg'"
       :path-link="'/shop'"
+      :counters-view="true"
     >
       <template v-slot:title>find clothes that matches your style</template>
       <template v-slot:description>

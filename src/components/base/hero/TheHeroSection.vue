@@ -1,8 +1,7 @@
 <template>
   <section
     class="hero"
-    :class="{ desktopSize: !sizeScreen }"
-    :style="{ backgroundImage: 'url(/src/assets/images/' + props.pathImage + ')' }"
+    :style="{ 'background-image': 'url(/src/assets/images/' + props.pathImage + ')' }"
   >
     <div class="container hero__inner">
       <div class="hero__content">
@@ -13,7 +12,7 @@
         <BaseButton class="hero__button" :path="props.pathLink"
           ><slot name="button-text"
         /></BaseButton>
-        <TheHeroCounters class="hero__counters" />
+        <TheHeroCounters class="hero__counters" v-if="props.countersView" />
       </div>
     </div>
     <img
@@ -33,6 +32,7 @@ interface Props {
   pathImageMobile: string
   pathImage: string
   pathLink: string
+  countersView: boolean
 }
 
 const props = defineProps<Props>()
@@ -49,6 +49,11 @@ console.log(sizeScreen.value)
 @use '@/scss/fonts.scss';
 
 .hero {
+  background-color: variables.$background-color;
+  background-size: contain;
+
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 663px;
 
   &__inner {
@@ -81,18 +86,9 @@ console.log(sizeScreen.value)
   }
 }
 
-.desktopSize {
-  background: url('@/assets/images/background-hero.jpg');
-  background-color: variables.$background-color;
-  background-size: contain;
-
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 @media (max-width: variables.$vp-medium) {
   .hero {
-    background-image: none;
+    background-image: none !important;
 
     &__inner {
       padding-top: 40px;
@@ -122,10 +118,6 @@ console.log(sizeScreen.value)
       align-items: center;
       justify-content: center;
     }
-  }
-
-  .desktopSize {
-    background: none;
   }
 }
 </style>
