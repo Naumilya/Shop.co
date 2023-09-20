@@ -10,7 +10,7 @@
 
 .logo {
   @include fonts.text-headline-logo;
-  margin-top: -7px;
+  margin-bottom: 7px;
 }
 @media (max-width: variables.$vp-small) {
   .logo {
