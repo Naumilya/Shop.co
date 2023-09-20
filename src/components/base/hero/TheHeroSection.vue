@@ -1,19 +1,24 @@
 <template>
-  <section class="hero">
+  <section
+    class="hero"
+    :class="{ desktopSize: !sizeScreen }"
+    :style="{ backgroundImage: 'url(/src/assets/images/' + props.pathImage + ')' }"
+  >
     <div class="container hero__inner">
       <div class="hero__content">
-        <h1 class="hero__title">find clothes that matches your style</h1>
+        <h1 class="hero__title"><slot name="title" /></h1>
         <p class="hero__subtext">
-          Browse through our diverse range of meticulously crafted garments, designed to bring out
-          your individuality and cater to your sense of style.
+          <slot name="description" />
         </p>
-        <BaseButton class="hero__button" path="/shop">Shop Now</BaseButton>
+        <BaseButton class="hero__button" :path="props.pathLink"
+          ><slot name="button-text"
+        /></BaseButton>
         <TheHeroCounters class="hero__counters" />
       </div>
     </div>
     <img
       class="hero__image-mobile"
-      src="@/assets/images/background-mobile.jpg"
+      :src="`/src/assets/images/${props.pathImageMobile}`"
       alt="hero-background-mobile"
     />
   </section>
@@ -22,6 +27,21 @@
 <script setup lang="ts">
 import BaseButton from '@/components/base/button/BaseButton.vue'
 import TheHeroCounters from '@/components/base/hero/TheHeroCounters.vue'
+import { computed } from 'vue'
+
+interface Props {
+  pathImageMobile: string
+  pathImage: string
+  pathLink: string
+}
+
+const props = defineProps<Props>()
+
+const sizeScreen = computed(() => {
+  return window.matchMedia('(min-width: 400px)').matches
+})
+
+console.log(sizeScreen.value)
 </script>
 
 <style lang="scss" scoped>
@@ -30,14 +50,6 @@ import TheHeroCounters from '@/components/base/hero/TheHeroCounters.vue'
 
 .hero {
   min-height: 663px;
-
-  background: url('@/assets/images/background-hero.jpg');
-  background-size: contain;
-
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-color: variables.$background-color;
 
   &__inner {
     padding-top: 103px;
@@ -67,6 +79,15 @@ import TheHeroCounters from '@/components/base/hero/TheHeroCounters.vue'
   &__image-mobile {
     display: none;
   }
+}
+
+.desktopSize {
+  background: url('@/assets/images/background-hero.jpg');
+  background-color: variables.$background-color;
+  background-size: contain;
+
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: variables.$vp-medium) {
@@ -101,6 +122,10 @@ import TheHeroCounters from '@/components/base/hero/TheHeroCounters.vue'
       align-items: center;
       justify-content: center;
     }
+  }
+
+  .desktopSize {
+    background: none;
   }
 }
 </style>
