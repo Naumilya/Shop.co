@@ -25,8 +25,7 @@
 
 <script setup lang="ts">
 import BaseButton from '@/components/base/button/BaseButton.vue'
-import TheHeroCounters from '@/components/base/hero/TheHeroCounters.vue'
-import { computed } from 'vue'
+import TheHeroCounters from '@/components/common/HeroTemplate/TheHeroCounters.vue'
 
 interface Props {
   pathImageMobile: string
@@ -36,12 +35,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-
-const sizeScreen = computed(() => {
-  return window.matchMedia('(min-width: 400px)').matches
-})
-
-console.log(sizeScreen.value)
 </script>
 
 <style lang="scss" scoped>

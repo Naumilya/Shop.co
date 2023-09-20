@@ -17,5 +17,5 @@
 </template>
 
 <script setup lang="ts">
-import TheHeroSection from '@/components/base/hero/TheHeroSection.vue'
+import TheHeroSection from '@/components/common/HeroTemplate/TheHeroSection.vue'
 </script>
