@@ -17,4 +17,10 @@
     font-size: 25px;
   }
 }
+
+@media (max-width: variables.$vp-medium) {
+  .logo {
+    font-size: 25px;
+  }
+}
 </style>
