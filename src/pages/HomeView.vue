@@ -13,6 +13,7 @@
       >
       <template v-slot:button-text> Shop Now</template>
     </TheHeroSection>
+    <TheBrandsSection />
     <ProductCards :categories="['New Arrivals']">
       <template v-slot:title>New Arrivals</template>
     </ProductCards>
@@ -20,5 +21,7 @@
 </template>
 
 <script setup lang="ts">
+import TheBrandsSection from '@/components/base/brands/TheBrandsSection.vue'
+import TheHeroSection from '@/components/common/HeroTemplate/TheHeroSection.vue'
 import ProductCards from '@/components/common/ProductCardsTemplate/ProductCards.vue'
 </script>

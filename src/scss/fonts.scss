@@ -22,6 +22,10 @@
   @include text-headline(32px);
 }
 
+@mixin text-headline-h1 {
+  @include text-headline(64px);
+}
+
 @mixin text-headline-h2 {
   @include text-headline(48px);
 }
@@ -44,8 +48,4 @@
   padding: 6px 13px;
   background-color: rgba(#ff3333, 0.1);
   border-radius: 62px;
-
-@mixin text-headline-h1 {
-  @include text-headline(64px);
-}
 }

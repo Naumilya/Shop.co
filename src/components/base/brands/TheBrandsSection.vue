@@ -54,7 +54,6 @@ const BrandsList: Brands[] = [
 @use '@/scss/variables.scss';
 
 .brands {
-  margin-top: 116px;
   background: variables.$black;
 
   &__inner {
