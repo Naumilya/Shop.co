@@ -17,6 +17,9 @@
     <ProductCards :categories="['New Arrivals']">
       <template v-slot:title>New Arrivals</template>
     </ProductCards>
+    <ProductCards :categories="['Top Selling']">
+      <template v-slot:title>Top Selling</template>
+    </ProductCards>
   </main>
 </template>
 
