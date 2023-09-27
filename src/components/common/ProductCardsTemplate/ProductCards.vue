@@ -9,6 +9,7 @@
           :product="cardProduct"
         />
       </div>
+      <BaseButton class="button_white" :path="'/shop'">View All</BaseButton>
     </div>
   </section>
 </template>
@@ -16,6 +17,7 @@
 <script setup lang="ts">
 import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
+import BaseButton from '@/components/base/button/BaseButton.vue'
 import type { Product } from '@/types/IProducts'
 import { defineProps, onMounted, reactive } from 'vue'
 
