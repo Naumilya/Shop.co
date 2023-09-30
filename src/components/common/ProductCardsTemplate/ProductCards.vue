@@ -10,7 +10,7 @@
         />
       </div>
       <div :class="$style.buttonContainer">
-        <BaseButton :class="$style.productCardsButton" class="button_white" :path="'/shop'">
+        <BaseButton :class="[$style.productCardsButton, $style.button_white]" :path="'/shop'">
           View All
         </BaseButton>
       </div>
@@ -66,6 +66,10 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   margin-top: 36px;
+
+  @media (max-width: variables.$vp-x-small) {
+    display: block;
+  }
 }
 
 .productCardsButton {
@@ -88,6 +92,16 @@ onMounted(async () => {
   &::-webkit-scrollbar-thumb {
     background-color: variables.$black;
     border-radius: 10%;
+  }
+}
+
+.button_white {
+  background: variables.$white;
+  color: variables.$black;
+
+  &:hover {
+    border: 1px solid variables.$black;
+    transition: border 0.5s ease-in-out;
   }
 }
 </style>
