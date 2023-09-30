@@ -1,10 +1,10 @@
 <template>
-  <ul class="header-list">
-    <li class="header-list__item">
+  <ul :class="$style.headerList">
+    <li :class="$style.headerListItem">
       <DropDownMenu />
     </li>
-    <li class="header-list__item" v-for="{ nameItem, pathItem } in ListMenu" :key="nameItem">
-      <router-link class="header-list__item-link" :to="pathItem">
+    <li :class="$style.headerListItem" v-for="{ nameItem, pathItem } in ListMenu" :key="nameItem">
+      <router-link :class="$style.headerListItemLink" :to="pathItem">
         {{ nameItem }}
       </router-link>
     </li>
@@ -35,16 +35,16 @@ const ListMenu: itemListMenu[] = [
 ]
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use '@/scss/fonts.scss';
 @use '@/scss/variables.scss';
 
-.header-list {
+.headerList {
   display: flex;
   list-style: none;
   column-gap: 24px;
-  &__item {
-    &-link {
+  .headerListItem {
+    .headerListItemLink {
       text-decoration: none;
 
       color: variables.$black;
@@ -53,14 +53,14 @@ const ListMenu: itemListMenu[] = [
 }
 
 @media (max-width: variables.$vp-small) {
-  .header-list {
+  .headerList {
     display: block;
     width: 100%;
     font-weight: 600;
-    &__item {
+    .headerListItem {
       background-color: variables.$background-color;
       border: 1px solid variables.$divider;
-      &-link {
+      .headerListItemLink {
         text-decoration: none;
         color: variables.$black;
       }

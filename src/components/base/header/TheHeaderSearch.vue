@@ -1,7 +1,7 @@
 <template>
-  <div class="header-search">
+  <div :class="$style.headerSearch">
     <input
-      class="header-search__input"
+      :class="$style.headerSearchInput"
       type="text"
       inputmode="search"
       placeholder="Search for products..."
@@ -11,14 +11,14 @@
 
 <script setup lang="ts"></script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @use '@/scss/variables.scss';
-.header-search {
+.headerSearch {
   max-width: 577px;
   padding: 10px;
   width: 100%;
 
-  &__input {
+  .headerSearchInput {
     width: 100%;
     border: none;
     outline: none;
@@ -40,13 +40,13 @@
 }
 
 @media (max-width: variables.$vp-extra-large) {
-  .header-search {
+  .headerSearch {
     max-width: 377px;
   }
 }
 
 @media (max-width: variables.$vp-medium) {
-  .header-search {
+  .headerSearch {
     max-width: none;
   }
 }

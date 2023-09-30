@@ -1,7 +1,9 @@
 <template>
-  <div class="dropdown" ref="dropdownRef">
-    <button class="dropbtn" @click="toggleDropdown"><span>Shop</span> <iconDropDownArrow /></button>
-    <div class="dropdown__content" v-if="isActive">
+  <div :class="$style.dropdown" ref="dropdownRef">
+    <button :class="$style.dropbtn" @click="toggleDropdown">
+      <span>Shop</span> <iconDropDownArrow />
+    </button>
+    <div :class="$style.dropdownContent" v-if="isActive">
       <router-link
         @click="toggleDropdown"
         v-for="{ nameItem, pathItem } in ListMenu"
@@ -66,7 +68,7 @@ const toggleDropdown = () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @use '@/scss/variables.scss';
 
 .dropdown {
@@ -92,7 +94,7 @@ const toggleDropdown = () => {
     }
   }
 
-  &__content {
+  .dropdownContent {
     position: absolute;
     top: 25px;
     background-color: #f1f1f1;
@@ -121,7 +123,7 @@ const toggleDropdown = () => {
       font-size: 24px;
       font-weight: 600;
     }
-    &__content {
+    .dropdownContent {
       position: static;
       display: flex;
       width: 100%;

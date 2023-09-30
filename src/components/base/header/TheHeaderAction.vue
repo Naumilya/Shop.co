@@ -1,8 +1,8 @@
 <template>
-  <div class="header-action">
+  <div :class="$style.headerAction">
     <TheHeaderMobileSearch />
-    <router-link class="header-action__link" to="/Cart"><icnoCart /></router-link>
-    <router-link class="header-action__link" to="/Account"><iconAccount /></router-link>
+    <router-link :class="$style.headerActionLink" to="/Cart"><icnoCart /></router-link>
+    <router-link :class="$style.headerActionLink" to="/Account"><iconAccount /></router-link>
   </div>
 </template>
 
@@ -12,27 +12,17 @@ import iconAccount from '@/components/icons/iconAccount.vue'
 import icnoCart from '@/components/icons/iconCart.vue'
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use '@/scss/variables.scss';
 
-.header-action {
+.headerAction {
   display: flex;
   align-items: center;
   column-gap: 14px;
 
-  &__link {
+  .headerActionLink {
     display: flex;
     align-items: center;
-  }
-}
-
-.search {
-  display: none;
-}
-
-@media (max-width: variables.$vp-medium) {
-  .search {
-    display: block;
   }
 }
 </style>

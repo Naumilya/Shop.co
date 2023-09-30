@@ -1,22 +1,22 @@
 <template>
   <section
-    class="hero"
+    :class="$style.hero"
     :style="{ 'background-image': 'url(/src/assets/images/' + props.pathImage + ')' }"
   >
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <h1 class="hero__title"><slot name="title" /></h1>
-        <p class="hero__subtext">
+    <div :class="$style.heroInner" class="container">
+      <div :class="$style.heroContent">
+        <h1 :class="$style.heroTitle"><slot name="title" /></h1>
+        <p :class="$style.heroSubtext">
           <slot name="description" />
         </p>
-        <BaseButton class="hero__button" :path="props.pathLink"
+        <BaseButton :class="$style.heroButton" :path="props.pathLink"
           ><slot name="button-text"
         /></BaseButton>
-        <TheHeroCounters class="hero__counters" v-if="props.countersView" />
+        <TheHeroCounters :class="$style.heroCounters" v-if="props.countersView" />
       </div>
     </div>
     <img
-      class="hero__image-mobile"
+      :class="$style.heroImageMobile"
       :src="`/src/assets/images/${props.pathImageMobile}`"
       alt="hero-background-mobile"
     />
@@ -37,7 +37,7 @@ interface Props {
 const props = defineProps<Props>()
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @use '@/scss/variables.scss';
 @use '@/scss/fonts.scss';
 
@@ -49,32 +49,32 @@ const props = defineProps<Props>()
   background-repeat: no-repeat;
   min-height: 663px;
 
-  &__inner {
+  .heroInner {
     padding-top: 103px;
     padding-bottom: 116px;
   }
 
-  &__content {
+  .heroContent {
     max-width: 596px;
   }
 
-  &__title {
+  .heroTitle {
     @include fonts.text-headline-h1;
   }
 
-  &__subtext {
+  .heroSubtext {
     margin-top: 32px;
   }
 
-  &__button {
+  .heroButton {
     margin-top: 32px;
   }
 
-  &__counters {
+  .heroCounters {
     margin-top: 48px;
   }
 
-  &__image-mobile {
+  .heroImageMobile {
     display: none;
   }
 }
@@ -83,28 +83,28 @@ const props = defineProps<Props>()
   .hero {
     background-image: none !important;
 
-    &__inner {
+    .heroInner {
       padding-top: 40px;
       padding-bottom: 0px;
     }
 
-    &__title {
+    .heroTitle {
       font-size: 36px;
     }
 
-    &__subtext {
+    .heroSubtext {
       margin-top: 20px;
     }
 
-    &__button {
+    .heroButton {
       margin-top: 24px;
     }
 
-    &__counters {
+    .heroCounters {
       margin-top: 20px;
     }
 
-    &__image-mobile {
+    .heroImageMobile {
       width: 100%;
 
       display: flex;

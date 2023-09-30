@@ -1,10 +1,10 @@
 <template>
-  <router-link class="logo" to="/">shop.co</router-link>
+  <router-link :class="$style.logo" to="/">shop.co</router-link>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use '@/scss/fonts.scss';
 @use '@/scss/variables.scss';
 

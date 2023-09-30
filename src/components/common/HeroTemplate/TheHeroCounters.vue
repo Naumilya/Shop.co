@@ -1,8 +1,8 @@
 <template>
-  <div class="counters">
-    <div class="counters__counter" v-for="counter in counters" :key="counter.id">
-      <span class="counters__number">{{ counter.counterNumber }}+</span>
-      <div class="counters__subtext">{{ counter.subtext }}</div>
+  <div :class="$style.counters">
+    <div :class="$style.countersCounter" v-for="counter in counters" :key="counter.id">
+      <span :class="$style.countersNumber">{{ counter.counterNumber }}+</span>
+      <div :class="$style.countersSubtext">{{ counter.subtext }}</div>
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ const counters: Counters[] = [
 ]
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @use '@/scss/variables.scss';
 
 .counters {
@@ -42,20 +42,22 @@ const counters: Counters[] = [
   flex-wrap: wrap;
   gap: 20px;
 
-  &__counter {
+  .countersCounter {
     border-right: 1px solid variables.$divider;
     padding-right: 20px;
+
+    .countersNumber {
+      font-size: 40px;
+      font-weight: bold;
+      color: variables.$black;
+    }
+
+    .countersSubtext {
+    }
 
     &:last-child {
       border: none;
     }
-  }
-  &__number {
-    font-size: 40px;
-    font-weight: bold;
-    color: variables.$black;
-  }
-  &__subtext {
   }
 }
 
@@ -63,7 +65,7 @@ const counters: Counters[] = [
   .counters {
     justify-content: center;
 
-    &__counter {
+    .countersCounter {
       border-right: 1px solid variables.$divider;
 
       &:last-child {
@@ -79,16 +81,16 @@ const counters: Counters[] = [
 
 @media (max-width: 404px) {
   .counters {
-    &__counter {
+    .countersCounter {
       padding-right: 27px;
-    }
 
-    &__number {
-      font-size: 24px;
-    }
+      .countersNumber {
+        font-size: 24px;
+      }
 
-    &__subtext {
-      font-size: 12px;
+      .countersSubtext {
+        font-size: 12px;
+      }
     }
   }
 }
