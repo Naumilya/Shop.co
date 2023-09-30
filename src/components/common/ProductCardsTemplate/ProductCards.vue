@@ -9,7 +9,11 @@
           :product="cardProduct"
         />
       </div>
-      <BaseButton class="button_white" :path="'/shop'">View All</BaseButton>
+      <div :class="$style.buttonContainer">
+        <BaseButton :class="$style.productCardsButton" class="button_white" :path="'/shop'">
+          View All
+        </BaseButton>
+      </div>
     </div>
   </section>
 </template>
@@ -56,6 +60,15 @@ onMounted(async () => {
 .productСardsTitle {
   text-align: center;
   @include fonts.text-headline-h2;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.productCardsButton {
 }
 
 .containerCards {
