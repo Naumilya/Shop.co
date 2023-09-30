@@ -9,6 +9,11 @@
           :product="cardProduct"
         />
       </div>
+      <div :class="$style.buttonContainer">
+        <BaseButton :class="$style.productCardsButton" class="button_white" :path="'/shop'">
+          View All
+        </BaseButton>
+      </div>
     </div>
   </section>
 </template>
@@ -16,6 +21,7 @@
 <script setup lang="ts">
 import { getProducts } from '@/api/getProducts'
 import CardProduct from '@/components/base/CardProduct/CardProduct.vue'
+import BaseButton from '@/components/base/button/BaseButton.vue'
 import type { Product } from '@/types/IProducts'
 import { defineProps, onMounted, reactive } from 'vue'
 
@@ -54,6 +60,15 @@ onMounted(async () => {
 .productСardsTitle {
   text-align: center;
   @include fonts.text-headline-h2;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.productCardsButton {
 }
 
 .containerCards {

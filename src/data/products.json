@@ -11,7 +11,7 @@
   },
   {
     "id": 1,
-    "filterProduct": ["Top selling", "New Arrivals"],
+    "filterProduct": ["Top Selling", "New Arrivals"],
     "categoryProduct": "Formal",
     "namPeroduct": "SKINNY FIT JEANS",
     "pathImageProduct": "/src/assets/images/products/product2.jpg",
@@ -21,7 +21,7 @@
   },
   {
     "id": 2,
-    "filterProduct": ["New Arrivals"],
+    "filterProduct": ["Top Selling"],
     "categoryProduct": "Formal",
     "namPeroduct": "CHECKERED SHIRT",
     "pathImageProduct": "/src/assets/images/products/product3.jpg",
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "filterProduct": ["New Arrivals"],
+    "filterProduct": ["Top Selling"],
     "categoryProduct": "Formal",
     "namPeroduct": "VERTICAL STRIPED SHIRT",
     "pathImageProduct": "/src/assets/images/products/product5.jpg",
@@ -59,7 +59,7 @@
   },
   {
     "id": 7,
-    "filterProduct": ["New Arrivals"],
+    "filterProduct": ["Top Selling"],
     "categoryProduct": "Formal",
     "namPeroduct": "SKINNY FIT JEANS",
     "pathImageProduct": "/src/assets/images/products/product7.jpg",
