@@ -1,11 +1,11 @@
 <template>
-  <header class="header">
-    <div class="header__inner container">
+  <header :class="$style.header">
+    <div :class="$style.headerInner" class="container">
       <TheHeaderMobile />
       <BaseLogo />
-      <TheHeaderList class="header__menu" />
-      <TheHeaderSearch class="header__search" />
-      <TheHeaderAction class="header__action" />
+      <TheHeaderList :class="$style.headerMenu" />
+      <TheHeaderSearch :class="$style.headerSearch" />
+      <TheHeaderAction :class="$style.headerAction" />
     </div>
   </header>
 </template>
@@ -19,7 +19,7 @@ import TheHeaderSearch from '@/components/base/header/TheHeaderSearch.vue'
 import BaseLogo from '@/components/base/logo/BaseLogo.vue'
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @use '@/scss/variables.scss';
 .header {
   padding: 24px 0;
@@ -29,7 +29,7 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
   background: variables.$white;
   // align-items: center;
 
-  &__inner {
+  .headerInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,23 +37,23 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
 }
 
 @media (max-width: variables.$vp-medium) {
-  .header__search {
+  .headerSearch {
     display: none;
   }
 }
 
 @media (max-width: variables.$vp-small) {
   .header {
-    &__inner {
+    .headerInner {
       display: flex;
       justify-content: flex-start;
     }
 
-    &__menu {
+    .headerMenu {
       display: none;
     }
 
-    &__action {
+    .headerAction {
       margin-left: auto;
     }
   }

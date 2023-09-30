@@ -1,10 +1,10 @@
 <template>
-  <router-link class="header-action__link search" @click.prevent="isActive = !isActive" to="/"
+  <router-link :class="$style.search" @click.prevent="isActive = !isActive" to="/"
     ><iconSearch />
   </router-link>
-  <div class="mobile-search" v-if="isActive">
+  <div :class="$style.mobileSearch" v-if="isActive">
     <TheHeaderSearch />
-    <router-link class="mobile-search__close" to="/" @click.prevent="isActive = !isActive"
+    <router-link :class="$style.mobileSearchClose" to="/" @click.prevent="isActive = !isActive"
       >close</router-link
     >
   </div>
@@ -18,10 +18,10 @@ import { ref } from 'vue'
 const isActive = ref(false)
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use '@/scss/variables.scss';
 
-.mobile-search {
+.mobileSearch {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@ const isActive = ref(false)
   background-color: variables.$white;
   display: flex;
 
-  &__close {
+  .mobileSearchClose {
     padding: 15px;
     text-align: center;
     text-decoration: none;

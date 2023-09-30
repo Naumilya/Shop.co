@@ -35,14 +35,14 @@ const props = defineProps<Props>()
     transition: background 0.3s ease-in-out;
     // box-shadow: 0 5px 0px rgba( 0.5);
   }
+}
 
-  @media (max-width: variables.$vp-x-small) {
-    .button {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-    }
+@media (max-width: variables.$vp-x-small) {
+  .button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
   }
 }
 </style>
