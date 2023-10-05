@@ -59,10 +59,20 @@
         flex-wrap: wrap;
         gap: 20px;
 
+        a {
+          @media (max-width: variables.$vp-large) {
+            max-width: 684px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+          }
+        }
         .imgCard {
           border-radius: 20px;
+          width: 100%;
 
-          @media (max-width: variables.$vp-medium) {
+          @media (max-width: variables.$vp-large) {
             object-fit: fill;
             width: 100%;
             max-width: 407px;
