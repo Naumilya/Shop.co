@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>
+            https://www.shop-co.com/
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.buzz.ai/"/>
+    </url>
+    <url>
+        <loc>
+            https://www.shop-co/shop
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/shop"/>
+    </url>
+    <url>
+        <loc>
+            https://www.shop-co/Casual
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/Casual"/>
+    </url>
+    <url>
+        <loc>
+            https://www.shop-co/Formal
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/Formal"/>
+    </url>
+    <url>
+        <loc>
+            https://www.shop-co/Gym
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/Gym"/>
+    </url>
+		<url>
+        <loc>
+            https://www.shop-co/OnSale
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/OnSale"/>
+    </url>
+		<url>
+        <loc>
+            https://www.shop-co/NewArrivals
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/NewArrivals"/>
+    </url>
+		<url>
+        <loc>
+            https://www.shop-co/Brands
+        </loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.shop-co/Brands"/>
+    </url>
+</urlset>
+

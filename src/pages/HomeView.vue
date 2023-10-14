@@ -20,11 +20,16 @@
     <ProductCards :categories="['Top Selling']">
       <template v-slot:title>Top Selling</template>
     </ProductCards>
+    <BaseBrowseByDressStyle />
+    <BaseCommentsBlock />
   </main>
 </template>
 
 <script setup lang="ts">
 import TheBrandsSection from '@/components/base/brands/TheBrandsSection.vue'
+import BaseBrowseByDressStyle from '@/components/base/browseByDressStyle/BaseBrowseByDressStyle.vue'
+import BaseCommentsBlock from '@/components/base/comments/BaseCommentsBlock.vue'
+
 import TheHeroSection from '@/components/common/HeroTemplate/TheHeroSection.vue'
 import ProductCards from '@/components/common/ProductCardsTemplate/ProductCards.vue'
 </script>

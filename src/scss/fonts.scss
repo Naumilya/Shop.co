@@ -54,3 +54,12 @@
   background-color: rgba(#ff3333, 0.1);
   border-radius: 62px;
 }
+
+@mixin text-body-userName {
+  @include text-body(20px, 700);
+}
+
+@mixin text-body-description {
+  @include text-body(20px, 700);
+  color: rgba(#00000060);
+}
