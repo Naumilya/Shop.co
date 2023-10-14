@@ -1,0 +1,84 @@
+User-agent: Yandex
+Disallow: /xmlrpc.php
+Disallow: *?s*
+Disallow: *?preview=true*
+Disallow: */trackback/
+Disallow: */feed
+Disallow: */attachment/*
+Disallow: */print/
+Disallow: *?print=*
+Disallow: *utm*=
+Disallow: *?*
+
+User-Agent: Googlebot
+Disallow: /xmlrpc.php
+Disallow: ?s
+Disallow: ?preview=true
+Disallow: */trackback/
+Disallow: */feed
+Disallow: /attachment/
+Disallow: */print/ 
+Disallow: ?print=
+Disallow: utm=
+
+User-Agent: Bingbot
+Disallow: /xmlrpc.php
+Disallow: ?s 
+Disallow: ?preview=true 
+Disallow: */trackback/ 
+Disallow: */feed 
+Disallow: /attachment/ 
+Disallow: */print/ 
+Disallow: ?print= 
+Disallow: utm=
+
+User-Agent: Baiduspider 
+Disallow: /xmlrpc.php 
+Disallow: ?s Disallow: ?preview=true 
+Disallow: */trackback/ 
+Disallow: */feed 
+Disallow: /attachment/ 
+Disallow: */print/ 
+Disallow: ?print= 
+Disallow: utm= 
+Disallow: ?
+
+User-Agent: Yahoo! Slurp 
+Disallow: /xmlrpc.php 
+Disallow: ?s 
+Disallow: ?preview=true 
+Disallow: */trackback/ 
+Disallow: */feed 
+Disallow: /attachment/ 
+Disallow: */print/ 
+Disallow: ?print= 
+Disallow: utm= 
+Disallow: ?
+
+User-agent: Mail.Ru
+Disallow: /xmlrpc.php
+Disallow: *?s*
+Disallow: *?preview=true*
+Disallow: */trackback/
+Disallow: */feed
+Disallow: */attachment/*
+Disallow: */print/
+Disallow: *?print=*
+Disallow: *utm*=
+Disallow: *?*
+Allow: /wp-content/uploads/
+
+User-agent: *
+Disallow: /xmlrpc.php
+Disallow: *?s*
+Disallow: *?preview=true*
+Disallow: */trackback/
+Disallow: */feed
+Disallow: */attachment/*
+Disallow: */print/
+Disallow: *?print=*
+Disallow: *utm*=
+Disallow: *?*
+
+
+Sitemap: https://citadel-piter.ru/sitemap.xml
