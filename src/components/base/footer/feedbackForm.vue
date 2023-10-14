@@ -32,17 +32,22 @@ import feedbackInput from '@/components/base/footer/feedbackInput.vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .feadbackFormTitle {
       @include fonts.text-headline-h3;
       max-width: 551px;
       color: variables.$white;
+      @media (max-width: variables.$vp-small) {
+        font-size: 32px;
+      }
     }
 
     .feadbackFormAction {
       display: flex;
       flex-direction: column;
       row-gap: 14px;
+      margin-top: 32px;
 
       .button_white {
         background: variables.$white;
@@ -52,8 +57,21 @@ import feedbackInput from '@/components/base/footer/feedbackInput.vue'
           border: 1px solid variables.$black;
           transition: border 0.5s ease-in-out;
         }
+        @media (max-width: variables.$vp-small) {
+          padding: 11px 0;
+        }
+      }
+      @media (max-width: variables.$vp-small) {
+        width: 100%;
       }
     }
+
+    @media (max-width: variables.$vp-small) {
+      justify-content: center;
+    }
+  }
+  @media (max-width: variables.$vp-small) {
+    padding: 32px 24px;
   }
 }
 </style>
