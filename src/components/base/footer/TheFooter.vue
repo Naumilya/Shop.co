@@ -156,6 +156,7 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
   .copyright {
     border-top: 1px solid variables.$divider;
     padding-top: 25px;
+    padding-bottom: 77px;
     margin-top: 50px;
     display: flex;
     text-align: center;
