@@ -28,6 +28,10 @@ import feedbackInput from '@/components/base/footer/feedbackInput.vue'
   background-color: variables.$black;
   padding: 32px 64px;
   border-radius: 20px;
+
+  position: relative;
+  margin-bottom: -88px;
+  z-index: 1;
   .feadbackFormInner {
     display: flex;
     align-items: center;
@@ -61,7 +65,7 @@ import feedbackInput from '@/components/base/footer/feedbackInput.vue'
           padding: 11px 0;
         }
       }
-      @media (max-width: variables.$vp-small) {
+      @media (max-width: variables.$vp-large) {
         width: 100%;
       }
     }
