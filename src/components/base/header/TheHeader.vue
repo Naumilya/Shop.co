@@ -22,6 +22,7 @@ import BaseLogo from '@/components/base/logo/BaseLogo.vue'
 <style lang="scss" module>
 @use '@/scss/variables.scss';
 .header {
+  z-index: 5;
   padding: 24px 0;
   position: fixed;
   top: 0;
